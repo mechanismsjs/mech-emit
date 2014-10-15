@@ -14,7 +14,9 @@ That "something" could be an array, hashtable, open socket, list, a range (1..6)
 
 Traditionally, mapping in javascript is done as follows:
 
-```javascript traditional
+```javascript
+
+// javascript traditional
 [1,2,3,4,5].map(
    function(n) {
      return n + 2;
@@ -26,7 +28,8 @@ This is the "push-pull" approach to programming: we "push" data into the algorit
 Mechanisms use a "pull" approach to programming: an algorithm "pulls" the data into itself. Let's see what that looks like:
 
 
-```javascript mechanisms
+```javascript
+// javascript mechanisms
 m.map(
   m.add(2, m.emitArr([1,2,3,4,5]))
  ).go;
@@ -36,7 +39,7 @@ In his case, map returns an array by calling add until there is nothing left to 
 
 The resulting array is:
 
-```javascript mechanisms
+```javascript
 [3,4,5,6,7]
 ```
 
