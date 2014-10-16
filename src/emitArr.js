@@ -19,8 +19,14 @@ EmitArrF.prototype = Object.create ( Object.prototype, {
       if (this._r && this._cur >= this._s.length) {
          this._cur = 0;
       }
-      return this._s[this._cur++];
-   }}, // logic relies on the fact that out of bounds is undefined
+      return this._s[this._cur++];  // logic relies on the fact that out of bounds is undefined
+   }},
+   goNum: { enumerable: false, get: function() {
+      return this.go;
+   }},
+   goStr: { enumerable: false, get: function() {
+      return this.go;
+   }}
 });
 m.emitArr = emitArr;
 m.EmitArrF = EmitArrF;

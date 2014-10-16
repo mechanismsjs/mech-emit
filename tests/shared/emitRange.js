@@ -71,8 +71,8 @@ describe ("testing emitter", function() {
      expect(mech.len).to.equal(3);
      expect(mech._cur).to.eql(1);
      expect(mech.go).to.eql(1);
-     expect(mech.go).to.eql(2);
-     expect(mech.go).to.eql(3);
+     expect(mech.goStr).to.eql(2);
+     expect(mech.goNum).to.eql(3);
      expect(mech.go).to.eql(undefined);
 
 
@@ -124,7 +124,7 @@ describe ("testing emitter", function() {
      var mech = m.emitRange(-3,-1,1);
      expect(mech.len).to.equal(3);
      expect(mech._cur).to.eql(-3);
-     expect(mech.go).to.eql(-3);
+     expect(mech.goStr).to.eql(-3);
      expect(mech.go).to.eql(-2);
      expect(mech.go).to.eql(-1);
      expect(mech.go).to.eql(undefined);
@@ -139,10 +139,10 @@ describe ("testing emitter", function() {
       var mech = m.emitRange(1,3,2,true);
       expect(mech.len).to.equal(2);
       expect(mech.go).to.eql(1);
+      expect(mech.goNum).to.eql(3);
+      expect(mech.goStr).to.eql(1);
       expect(mech.go).to.eql(3);
-      expect(mech.go).to.eql(1);
-      expect(mech.go).to.eql(3);
-      expect(mech.go).to.eql(1);
+      expect(mech.goNum).to.eql(1);
       expect(mech.go).to.eql(3);
 
       var mech = m.emitRange(5,3,-2,true);

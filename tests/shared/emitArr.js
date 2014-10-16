@@ -18,13 +18,22 @@ describe ("testing emitter", function() {
       var mech = m.emitArr();
       expect(mech.go).to.eql(undefined);
       expect(mech.go).to.eql(undefined);
-      expect(mech.go).to.eql(undefined);
+      expect(mech.goNum).to.eql(undefined);
+      expect(mech.goNum).to.eql(undefined);
+      expect(mech.goStr).to.eql(undefined);
+      expect(mech.goStr).to.eql(undefined);
       expect(mech.len).to.equal(1);
 
       var mech2 = m.emitArr(undefined);
       expect(mech2.go).to.eql(undefined);
       expect(mech2.go).to.eql(undefined);
       expect(mech2.go).to.eql(undefined);
+      expect(mech2.goNum).to.eql(undefined);
+      expect(mech2.goNum).to.eql(undefined);
+      expect(mech2.goNum).to.eql(undefined);
+      expect(mech2.goStr).to.eql(undefined);
+      expect(mech2.goStr).to.eql(undefined);
+      expect(mech2.goStr).to.eql(undefined);
       expect(mech2.len).to.equal(1);
    });
 
@@ -34,6 +43,8 @@ describe ("testing emitter", function() {
       expect(mech.go).to.eql(null);
       expect(mech.go).to.eql(undefined);
       expect(mech.go).to.eql(undefined);
+      expect(mech.goNum).to.eql(undefined);
+      expect(mech.goStr).to.eql(undefined);
       expect(mech.len).to.equal(1);
    });
 
@@ -43,6 +54,16 @@ describe ("testing emitter", function() {
       expect(mech.go).to.equal(6);
       expect(mech.go).to.eql(undefined);
       expect(mech.go).to.eql(undefined);
+      
+      var mech = m.emitArr("8");
+      expect(mech.len).to.equal(1);
+      expect(mech.goNum).to.equal("8");
+      expect(mech.goStr).to.eql(undefined);
+
+      var mech = m.emitArr(12);
+      expect(mech.len).to.equal(1);
+      expect(mech.goStr).to.equal(12);
+      expect(mech.goNum).to.eql(undefined);
    });
 
    it ("should treat an array as an array", function() {

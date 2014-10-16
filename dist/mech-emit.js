@@ -1,5 +1,5 @@
 // mech-emit.js
-// version: 0.1.1
+// version: 0.1.2
 // author: Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)
 // license: MIT
 (function() {
@@ -10,7 +10,7 @@ if (typeof root.m === 'undefined') { root.m = {}; } // Save the previous library
 var m = root.m;
 var previous = m;
 m = previous || {}; // New library OR to use existing library (m for example), please fork and add to that project.
-m["version-emit"] = '0.1.1'; // Version auto updated by gulpfile.js build process
+m["version-emit"] = '0.1.2'; // Version auto updated by gulpfile.js build process
 
 // Export module for Node and the browser.
 if(typeof module !== 'undefined' && module.exports) {
@@ -40,8 +40,14 @@ EmitArrF.prototype = Object.create ( Object.prototype, {
       if (this._r && this._cur >= this._s.length) {
          this._cur = 0;
       }
-      return this._s[this._cur++];
-   }}, // logic relies on the fact that out of bounds is undefined
+      return this._s[this._cur++];  // logic relies on the fact that out of bounds is undefined
+   }},
+   goNum: { enumerable: false, get: function() {
+      return this.go;
+   }},
+   goStr: { enumerable: false, get: function() {
+      return this.go;
+   }}
 });
 m.emitArr = emitArr;
 m.EmitArrF = EmitArrF;
@@ -99,7 +105,9 @@ EmitRangeF.prototype = Object.create ( Object.prototype, {
 		var t = this._cur;
 		this._cur = this._cur + this._by;
 		return t;			
-   }}
+   }},
+   goNum: { enumerable: false, get: function() { return this.go; }},
+   goStr: { enumerable: false, get: function() { return this.go; }}
 });
 m.emitRange = emitRange;
 m.EmitRangeF = EmitRangeF;

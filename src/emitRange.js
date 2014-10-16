@@ -52,7 +52,9 @@ EmitRangeF.prototype = Object.create ( Object.prototype, {
 		var t = this._cur;
 		this._cur = this._cur + this._by;
 		return t;			
-   }}
+   }},
+   goNum: { enumerable: false, get: function() { return this.go; }},
+   goStr: { enumerable: false, get: function() { return this.go; }}
 });
 m.emitRange = emitRange;
 m.EmitRangeF = EmitRangeF;
