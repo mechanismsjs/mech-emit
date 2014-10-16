@@ -134,10 +134,10 @@ m.map(
   m.add(2, m.emitRange(0, Infinity, 1000))
 );
 
-m.go // will never return
+m.go // theoretically, should never return
 ```
 
-This will freeze because we will try to create an infinite map.
+This should theoretically freeze because we will try to create an infinite map. However, we've implemented a default limit to the number of items the mapping function will attempt to traverse to 1000. You can, of course, increase that number to any number you like.
 
 But really, who needs a map when you can turn any algorithm into a "mapping" algorithm by simply adding emitters to the algorithm.
 
