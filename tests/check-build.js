@@ -4,6 +4,6 @@ describe("the modules were built correctly", function() {
    });
 
    it ("should have the correct version", function() {
-      expect(m._["version-emit"]).to.equal('0.1.5');
+      expect(m._["version-emit"]).to.equal('0.1.6');
    });
 });

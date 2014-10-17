@@ -59,6 +59,7 @@ gulp.task('build', function() {
       .pipe(replace('{{VERSION}}',        // update version tag in code
          pkg.version))
       .pipe(gulp.dest('dist'))            // dump pkg.name + '.js'
+      .pipe(uglify())                     // minify it
       .pipe(rename(libName + '.min.js'))  // rename for minify
       .pipe(gulp.dest('dist'))            // dump pkg.name + '.min.js'
       .pipe(rename(libName + '.min.brow.js'))  // rename before browserify
