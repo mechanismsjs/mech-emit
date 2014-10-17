@@ -1,11 +1,11 @@
 function emitFromArr(source,repeat) {
-   var f = Object.create(EmitArrF.prototype);
+   var f = Object.create(EmitFromArrF.prototype);
    f.s = source;
    f._r = ((null == repeat) || (undefined == repeat)) ? false : true;
    return f;
 };
-function EmitArrF() {};
-EmitArrF.prototype = Object.create ( Object.prototype, {
+function EmitFromArrF() {};
+EmitFromArrF.prototype = Object.create ( Object.prototype, {
    isMech: { get: function() { return true }},
    s: { enumerable: false,
       get: function() { return this._s; },
@@ -32,4 +32,4 @@ EmitArrF.prototype = Object.create ( Object.prototype, {
    }}
 });
 m.emitFromArr = emitFromArr;
-m.EmitArrF = EmitArrF;
+m_.EmitFromArrF = EmitFromArrF;

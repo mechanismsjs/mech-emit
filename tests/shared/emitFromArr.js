@@ -3,6 +3,7 @@ describe ("testing emitter", function() {
       var mech = m.emitFromArr(1);
       expect(mech).to.have.property('toString');
       expect(m.mech).to.not.eql(null);
+      expect (m._.EmitFromArrF).to.not.eql(undefined);
    });
 
    it ("should have correct properties", function() {

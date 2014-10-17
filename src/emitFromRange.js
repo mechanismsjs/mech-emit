@@ -1,5 +1,5 @@
 function emitFromRange(min,max,by,repeat) {
-   var f = Object.create(EmitRangeF.prototype);
+   var f = Object.create(EmitFromRangeF.prototype);
 
    if (	null === min || undefined === min ||
 			null === max || undefined === max ||
@@ -28,8 +28,8 @@ function emitFromRange(min,max,by,repeat) {
    f._len = isNaN(lenT) ? undefined : lenT; // by is a mechansim can't know length.
    return f;
 };
-function EmitRangeF() {};
-EmitRangeF.prototype = Object.create ( Object.prototype, {
+function EmitFromRangeF() {};
+EmitFromRangeF.prototype = Object.create ( Object.prototype, {
    isMech: { get: function() { return true }},
    min: { get: function() { return this._min; }, },
    max: { get: function() { return this._max; }, },
@@ -73,4 +73,4 @@ EmitRangeF.prototype = Object.create ( Object.prototype, {
    goStr: { enumerable: false, get: function() { return this.go; }}
 });
 m.emitFromRange = emitFromRange;
-m.EmitRangeF = EmitRangeF;
+m_.EmitFromRangeF = EmitFromRangeF;

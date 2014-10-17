@@ -1,32 +1,31 @@
 // mech-emit.js
-// version: 0.1.3
+// version: 0.1.4
 // author: Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)
 // license: MIT
 (function() {
 "use strict";
 
-var root = this; // Establish root object 'window' (browser) or 'exports' (server)
-if (typeof root.m === 'undefined') { root.m = {}; } // Save the previous library
-var m = root.m;
-var previous = m;
-m = previous || {}; // New library OR to use existing library (m for example), please fork and add to that project.
-m["version-emit"] = '0.1.3'; // Version auto updated by gulpfile.js build process
+var root = this; // Root becomes window (browser) or exports (server)
+var previous = root.m;
+var m = previous || { _ : {} }; // new module or merge with previous
+var m_ = m._ || {}; // new sub-module or merge with pervious
+m["version-emit"] = '0.1.4'; // New library OR to use existing library (m for example), please fork and add to that project.
 
 // Export module for Node and the browser.
 if(typeof module !== 'undefined' && module.exports) {
   module.exports = m;
 } else {
-  root.m = m;
+  this.m = m
 }
 
 function emitFromArr(source,repeat) {
-   var f = Object.create(EmitArrF.prototype);
+   var f = Object.create(EmitFromArrF.prototype);
    f.s = source;
    f._r = ((null == repeat) || (undefined == repeat)) ? false : true;
    return f;
 };
-function EmitArrF() {};
-EmitArrF.prototype = Object.create ( Object.prototype, {
+function EmitFromArrF() {};
+EmitFromArrF.prototype = Object.create ( Object.prototype, {
    isMech: { get: function() { return true }},
    s: { enumerable: false,
       get: function() { return this._s; },
@@ -53,9 +52,9 @@ EmitArrF.prototype = Object.create ( Object.prototype, {
    }}
 });
 m.emitFromArr = emitFromArr;
-m.EmitArrF = EmitArrF;
+m_.EmitFromArrF = EmitFromArrF;
 function emitFromRange(min,max,by,repeat) {
-   var f = Object.create(EmitRangeF.prototype);
+   var f = Object.create(EmitFromRangeF.prototype);
 
    if (	null === min || undefined === min ||
 			null === max || undefined === max ||
@@ -84,8 +83,8 @@ function emitFromRange(min,max,by,repeat) {
    f._len = isNaN(lenT) ? undefined : lenT; // by is a mechansim can't know length.
    return f;
 };
-function EmitRangeF() {};
-EmitRangeF.prototype = Object.create ( Object.prototype, {
+function EmitFromRangeF() {};
+EmitFromRangeF.prototype = Object.create ( Object.prototype, {
    isMech: { get: function() { return true }},
    min: { get: function() { return this._min; }, },
    max: { get: function() { return this._max; }, },
@@ -129,6 +128,6 @@ EmitRangeF.prototype = Object.create ( Object.prototype, {
    goStr: { enumerable: false, get: function() { return this.go; }}
 });
 m.emitFromRange = emitFromRange;
-m.EmitRangeF = EmitRangeF;
+m_.EmitFromRangeF = EmitFromRangeF;
 
 }.call(this));
