@@ -15,8 +15,8 @@ var transform = require('vinyl-transform');
 
 source = [
    'src/util/header.js',
-   'src/emitArr.js',
-   'src/emitRange.js',
+   'src/emitFromArr.js',
+   'src/emitFromRange.js',
    'src/util/footer.js'
 ];
 
