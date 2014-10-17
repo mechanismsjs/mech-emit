@@ -6,8 +6,7 @@
 "use strict";
 
 var root = this; // Root becomes window (browser) or exports (server)
-var previous = root.m;
-var m = previous || { _ : {} }; // new module or merge with previous
+var m = root.m || { _ : {} }; // new module or merge with previous
 var m_ = m._ || {}; // new sub-module or merge with pervious
 m["version-emit"] = '0.1.4'; // New library OR to use existing library (m for example), please fork and add to that project.
 
@@ -15,7 +14,7 @@ m["version-emit"] = '0.1.4'; // New library OR to use existing library (m for ex
 if(typeof module !== 'undefined' && module.exports) {
   module.exports = m;
 } else {
-  this.m = m
+  root.m = m
 }
 
 function emitFromArr(source,repeat) {
