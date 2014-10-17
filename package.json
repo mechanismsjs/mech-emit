@@ -1,6 +1,6 @@
 {
   "name": "mech-emit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Library of emitter mechanisms",
   "main": "./dist/mech-emit.js",
   "scripts": {
@@ -36,8 +36,8 @@
     "gulp-replace": "^0.4.0",
     "gulp-uglify": "^1.0.1",
     "gulp-util": "^3.0.1",
+    "mech-core": "*",
     "mocha": "^1.21.4",
-    "vinyl-transform": "0.0.1",
-    "mech-core": "*"
+    "vinyl-transform": "0.0.1"
   }
 }

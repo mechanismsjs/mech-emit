@@ -32,4 +32,4 @@ EmitFromArrF.prototype = Object.create ( Object.prototype, {
    }}
 });
 m.emitFromArr = emitFromArr;
-m_.EmitFromArrF = EmitFromArrF;
+m._.EmitFromArrF = EmitFromArrF;

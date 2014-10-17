@@ -1,5 +1,5 @@
 // mech-emit.js
-// version: 0.1.4
+// version: 0.1.5
 // author: Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)
 // license: MIT
 (function() {
@@ -7,8 +7,8 @@
 
 var root = this; // Root becomes window (browser) or exports (server)
 var m = root.m || { _ : {} }; // new module or merge with previous
-var m_ = m._ || {}; // new sub-module or merge with pervious
-m["version-emit"] = '0.1.4'; // New library OR to use existing library (m for example), please fork and add to that project.
+m._ = m._ || {}; // new sub-module or merge with pervious
+m._["version-emit"] = '0.1.5'; // New library OR to use existing library (m for example), please fork and add to that project.
 
 // Export module for Node and the browser.
 if(typeof module !== 'undefined' && module.exports) {
@@ -51,7 +51,7 @@ EmitFromArrF.prototype = Object.create ( Object.prototype, {
    }}
 });
 m.emitFromArr = emitFromArr;
-m_.EmitFromArrF = EmitFromArrF;
+m._.EmitFromArrF = EmitFromArrF;
 function emitFromRange(min,max,by,repeat) {
    var f = Object.create(EmitFromRangeF.prototype);
 
@@ -127,6 +127,6 @@ EmitFromRangeF.prototype = Object.create ( Object.prototype, {
    goStr: { enumerable: false, get: function() { return this.go; }}
 });
 m.emitFromRange = emitFromRange;
-m_.EmitFromRangeF = EmitFromRangeF;
+m._.EmitFromRangeF = EmitFromRangeF;
 
 }.call(this));

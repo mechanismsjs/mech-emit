@@ -73,4 +73,4 @@ EmitFromRangeF.prototype = Object.create ( Object.prototype, {
    goStr: { enumerable: false, get: function() { return this.go; }}
 });
 m.emitFromRange = emitFromRange;
-m_.EmitFromRangeF = EmitFromRangeF;
+m._.EmitFromRangeF = EmitFromRangeF;
