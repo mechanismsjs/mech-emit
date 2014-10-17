@@ -4,7 +4,7 @@ describe ("emitFormRange mechanism", function() {
       var mech = m.emitFromRange(1,2,3);
       expect(mech).to.have.property('toString');
       expect(m.mech).to.not.eql(null);
-      expect (m._.EmitFromRangeF).to.not.eql(undefined);        
+      expect (m._.EmitFromRangeF).to.not.be.undefined;
    });
    
    it ("should have correct properties", function() {
