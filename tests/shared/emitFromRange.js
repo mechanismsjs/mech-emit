@@ -193,7 +193,7 @@ describe ("emitFormRange mechanism", function() {
       // cause i am lazy to figure this out
       var ex = false;
       try { var x = mech.go; } catch (e) {
-         expect(e.toString()).to.equal("RangeError: the mechanism located in 'by' returnd a non-defiend value.");
+         expect(e.toString()).to.equal("RangeError: the mechanism located in 'by' returned a non-defiend value.");
          ex = true;
       }
       expect(ex).to.be.true;

@@ -102,7 +102,7 @@ EmitFromRangeF.prototype = Object.create ( Object.prototype, {
          //    throw new RangeError("the mechanism in by return 0 (infinite loop).");
          // }
          if ((null === by) || (undefined === by)) {
-         	throw new RangeError("the mechanism located in 'by' returnd a non-defiend value.");
+         	throw new RangeError("the mechanism located in 'by' returned a non-defiend value.");
          }
       }
       
