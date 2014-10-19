@@ -1,4 +1,4 @@
-[mech-home-link]: https://github.com/mechs/mech "Home repository for mechs"
+[mech-home-link]: https://github.com/mechanisms/mech "Home repository for mechs"
 
 # mech-emit
 
