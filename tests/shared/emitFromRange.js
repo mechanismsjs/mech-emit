@@ -20,6 +20,17 @@ describe("emitFormRange mechanism", function() {
 		expect(mech).to.have.property('_by'); // imagined privacy
 	});
 
+	it("should set _parDir of child mechanisms to parent", function() {
+		var mech1 = m.num(1);
+		var mech2 = m.num(2);
+		var mech3 = m.num(3);
+		var mech4 = m.emitFromRange(mech1, mech2, mech3);
+		expect(mech1._parDir).to.equal(mech4);
+		expect(mech2._parDir).to.equal(mech4);
+		expect(mech3._parDir).to.equal(mech4);		
+	});
+
+
 	it("should emit undefined forever when configured badly", function() {
 		var mech = m.emitFromRange();
 		expect(mech.go).to.be.undefined;

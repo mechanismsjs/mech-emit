@@ -15,6 +15,12 @@ describe("testing emitter", function() {
 		expect(mech).to.have.property('_s'); // imagined privacy
 	});
 
+	it("should set _parDir of child mechanisms to parent", function() {
+		var mech = m.num(1);
+		var mech3 = m.emitFromArr(mech);
+		expect(mech._parDir).to.equal(mech3);
+	});
+
 	it("should always emit undefined and have correct length", function() {
 		var mech = m.emitFromArr();
 		expect(mech.len).to.equal(1);

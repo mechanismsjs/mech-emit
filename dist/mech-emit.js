@@ -1,5 +1,5 @@
 // mech-emit.js
-// version: 0.1.8
+// version: 0.1.9
 // author: Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)
 // license: MIT
 (function() {
@@ -10,7 +10,7 @@ var m = root.m || {
 	_: {}
 }; // new module or merge with previous
 m._ = m._ || {}; // new sub-module or merge with pervious
-m._["version-emit"] = '0.1.8'; // New library OR to use existing library (m for example), please fork and add to that project.
+m._["version-emit"] = '0.1.9'; // New library OR to use existing library (m for example), please fork and add to that project.
 
 // Export module for Node and the browser.
 if (typeof module !== 'undefined' && module.exports) {
@@ -21,6 +21,10 @@ if (typeof module !== 'undefined' && module.exports) {
 function emitFromArr(source, repeat) {
 	var f = Object.create(EmitFromArrF.prototype);
 	f.s = source;
+	if (source && source.isMech) {
+		source._parDir = f;
+	}
+
 	f._r = ((null == repeat) || (undefined == repeat)) ? false : true;
 	return f;
 };
@@ -105,6 +109,18 @@ m.emitFromArr = emitFromArr;
 m._.EmitFromArrF = EmitFromArrF;
 function emitFromRange(min, max, by, repeat) {
 	var f = Object.create(EmitFromRangeF.prototype);
+
+	if (min && min.isMech) {
+		min._parDir = f;
+	}
+
+	if (max && max.isMech) {
+		max._parDir = f;
+	}
+
+	if (by && by.isMech) {
+		by._parDir = f;
+	}
 
 	f._inc = min < max;
 	f._cur = min;

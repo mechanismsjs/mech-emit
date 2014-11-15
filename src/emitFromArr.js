@@ -1,6 +1,10 @@
 function emitFromArr(source, repeat) {
 	var f = Object.create(EmitFromArrF.prototype);
 	f.s = source;
+	if (source && source.isMech) {
+		source._parDir = f;
+	}
+
 	f._r = ((null == repeat) || (undefined == repeat)) ? false : true;
 	return f;
 };

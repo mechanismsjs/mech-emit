@@ -1,6 +1,18 @@
 function emitFromRange(min, max, by, repeat) {
 	var f = Object.create(EmitFromRangeF.prototype);
 
+	if (min && min.isMech) {
+		min._parDir = f;
+	}
+
+	if (max && max.isMech) {
+		max._parDir = f;
+	}
+
+	if (by && by.isMech) {
+		by._parDir = f;
+	}
+
 	f._inc = min < max;
 	f._cur = min;
 	f._min = min;
