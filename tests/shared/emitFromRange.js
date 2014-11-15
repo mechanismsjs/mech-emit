@@ -190,11 +190,11 @@ describe("emitFormRange mechanism", function() {
 		expect(mech2.go).to.equal(10);
 		expect(mech2.go).to.equal(9);
 
-		var mech3 = m.emitFromRange(1,300,m.emitFromArr([3, -1, 4],true));
+		var mech3 = m.emitFromRange(1, 300, m.emitFromArr([3, -1, 4], true));
 
 
 		expect(mech3.go).to.equal(1);
-    expect(mech3.go).to.equal(4);
+		expect(mech3.go).to.equal(4);
 		expect(mech3.go).to.equal(3);
 		expect(mech3.go).to.equal(7);
 		expect(mech3.go).to.equal(10);

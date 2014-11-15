@@ -100,7 +100,7 @@ EmitFromRangeF.prototype = Object.create(Object.prototype, {
 		get: function() {
 			var res = this.go;
 			if (undefined !== res) {
-				return res > 0				
+				return res > 0
 			}
 			return res;
 		}
