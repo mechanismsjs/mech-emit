@@ -70,15 +70,15 @@ describe("testing emitter", function() {
 		expect(mech.go).to.eql(undefined);
 		expect(mech.go).to.eql(undefined);
 
-		var mech = m.emitFromArr("8");
-		expect(mech.len).to.equal(1);
-		expect(mech.goNum).to.equal(8);
-		expect(mech.goStr).to.eql(undefined);
+		var mech2 = m.emitFromArr("8");
+		expect(mech2.len).to.equal(1);
+		expect(mech2.goNum).to.equal(8);
+		expect(mech2.goStr).to.eql(undefined);
 
-		var mech = m.emitFromArr(12);
-		expect(mech.len).to.equal(1);
-		expect(mech.goStr).to.equal("12");
-		expect(mech.goNum).to.eql(undefined);
+		var mech3 = m.emitFromArr(12);
+		expect(mech3.len).to.equal(1);
+		expect(mech3.goStr).to.equal("12");
+		expect(mech3.goNum).to.eql(undefined);
 	});
 
 	it("should treat an array as an array", function() {

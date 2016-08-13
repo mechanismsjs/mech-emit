@@ -27,7 +27,7 @@ describe("emitFormRange mechanism", function() {
 		var mech4 = m.emitFromRange(mech1, mech2, mech3);
 		expect(mech1._parDir).to.equal(mech4);
 		expect(mech2._parDir).to.equal(mech4);
-		expect(mech3._parDir).to.equal(mech4);		
+		expect(mech3._parDir).to.equal(mech4);
 	});
 
 
@@ -103,59 +103,59 @@ describe("emitFormRange mechanism", function() {
 		expect(mech.go).to.eql(undefined);
 
 
-		var mech = m.emitFromRange(1, 3, 2);
-		expect(mech.len).to.equal(2);
-		expect(mech.go).to.eql(1);
-		expect(mech.go).to.eql(3);
-		expect(mech.go).to.eql(undefined);
+		var mech2 = m.emitFromRange(1, 3, 2);
+		expect(mech2.len).to.equal(2);
+		expect(mech2.go).to.eql(1);
+		expect(mech2.go).to.eql(3);
+		expect(mech2.go).to.eql(undefined);
 
 
-		var mech = m.emitFromRange(0, 4, 2);
-		expect(mech.len).to.equal(3);
-		expect(mech.go).to.eql(0);
-		expect(mech.go).to.eql(2);
-		expect(mech.go).to.eql(4);
-		expect(mech.go).to.eql(undefined);
+		var mech3 = m.emitFromRange(0, 4, 2);
+		expect(mech3.len).to.equal(3);
+		expect(mech3.go).to.eql(0);
+		expect(mech3.go).to.eql(2);
+		expect(mech3.go).to.eql(4);
+		expect(mech3.go).to.eql(undefined);
 
-		var mech = m.emitFromRange(0, 3, .5);
-		expect(mech.len).to.equal(7);
-		expect(mech.go).to.eql(0);
-		expect(mech.go).to.eql(.5);
-		expect(mech.go).to.eql(1);
-		expect(mech.go).to.eql(1.5);
-		expect(mech.go).to.eql(2);
-		expect(mech.go).to.eql(2.5);
-		expect(mech.go).to.eql(3);
-		expect(mech.go).to.eql(undefined);
-		expect(mech.go).to.eql(undefined);
+		var mech4 = m.emitFromRange(0, 3, 0.5);
+		expect(mech4.len).to.equal(7);
+		expect(mech4.go).to.eql(0);
+		expect(mech4.go).to.eql(0.5);
+		expect(mech4.go).to.eql(1);
+		expect(mech4.go).to.eql(1.5);
+		expect(mech4.go).to.eql(2);
+		expect(mech4.go).to.eql(2.5);
+		expect(mech4.go).to.eql(3);
+		expect(mech4.go).to.eql(undefined);
+		expect(mech4.go).to.eql(undefined);
 
-		var mech = m.emitFromRange(4, 1, -1);
-		expect(mech.len).to.equal(4);
-		expect(mech._cur).to.eql(4);
-		expect(mech.go).to.eql(4);
-		expect(mech.go).to.eql(3);
-		expect(mech.go).to.eql(2);
-		expect(mech.go).to.eql(1);
-		expect(mech.go).to.eql(undefined);
-		expect(mech.go).to.eql(undefined);
+		var mech5 = m.emitFromRange(4, 1, -1);
+		expect(mech5.len).to.equal(4);
+		expect(mech5._cur).to.eql(4);
+		expect(mech5.go).to.eql(4);
+		expect(mech5.go).to.eql(3);
+		expect(mech5.go).to.eql(2);
+		expect(mech5.go).to.eql(1);
+		expect(mech5.go).to.eql(undefined);
+		expect(mech5.go).to.eql(undefined);
 
-		var mech = m.emitFromRange(2, 1, -.5);
-		expect(mech.len).to.equal(3);
-		expect(mech._cur).to.eql(2);
-		expect(mech.go).to.eql(2);
-		expect(mech.go).to.eql(1.5);
-		expect(mech.go).to.eql(1);
-		expect(mech.go).to.eql(undefined);
-		expect(mech.go).to.eql(undefined);
+		var mech6 = m.emitFromRange(2, 1, -0.5);
+		expect(mech6.len).to.equal(3);
+		expect(mech6._cur).to.eql(2);
+		expect(mech6.go).to.eql(2);
+		expect(mech6.go).to.eql(1.5);
+		expect(mech6.go).to.eql(1);
+		expect(mech6.go).to.eql(undefined);
+		expect(mech6.go).to.eql(undefined);
 
-		var mech = m.emitFromRange(-3, -1, 1);
-		expect(mech.len).to.equal(3);
-		expect(mech._cur).to.equal(-3);
-		expect(mech.goStr).to.equal("-3");
-		expect(mech.go).to.equal(-2);
-		expect(mech.go).to.equal(-1);
-		expect(mech.go).to.eql(undefined);
-		expect(mech.go).to.eql(undefined);
+		var mech7 = m.emitFromRange(-3, -1, 1);
+		expect(mech7.len).to.equal(3);
+		expect(mech7._cur).to.equal(-3);
+		expect(mech7.goStr).to.equal("-3");
+		expect(mech7.go).to.equal(-2);
+		expect(mech7.go).to.equal(-1);
+		expect(mech7.go).to.eql(undefined);
+		expect(mech7.go).to.eql(undefined);
 
 	});
 
@@ -170,14 +170,14 @@ describe("emitFormRange mechanism", function() {
 		expect(mech.goNum).to.equal(1);
 		expect(mech.go).to.equal(3);
 
-		var mech = m.emitFromRange(5, 3, -2, true);
-		expect(mech.len).to.equal(Infinity);
-		expect(mech.go).to.eql(5);
-		expect(mech.go).to.eql(3);
-		expect(mech.go).to.eql(5);
-		expect(mech.go).to.eql(3);
-		expect(mech.go).to.eql(5);
-		expect(mech.go).to.eql(3);
+		var mech2 = m.emitFromRange(5, 3, -2, true);
+		expect(mech2.len).to.equal(Infinity);
+		expect(mech2.go).to.eql(5);
+		expect(mech2.go).to.eql(3);
+		expect(mech2.go).to.eql(5);
+		expect(mech2.go).to.eql(3);
+		expect(mech2.go).to.eql(5);
+		expect(mech2.go).to.eql(3);
 	});
 
 	it("should accept a mechanism as a by", function() {

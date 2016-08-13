@@ -18,17 +18,17 @@ function emitFromRange(min, max, by, repeat) {
 	f._min = min;
 	f._max = max;
 	f._by = by;
-	f._r = ((null == repeat) || (undefined == repeat)) ? false : true;
+	f._r = ((null === repeat) || (undefined === repeat)) ? false : true;
 	var lenT = (max - min) / by + 1;
 	f._len = isNaN(lenT) ? undefined : lenT; // by is a mechansim can't know length.
 	return f;
-};
+}
 
-function EmitFromRangeF() {};
+function EmitFromRangeF() {}
 EmitFromRangeF.prototype = Object.create(Object.prototype, {
 	isMech: {
 		get: function() {
-			return true
+			return true;
 		}
 	},
 	min: {
@@ -49,8 +49,8 @@ EmitFromRangeF.prototype = Object.create(Object.prototype, {
 	len: {
 		get: function() {
 			if (this._r) {
-				return Infinity
-			};
+				return Infinity;
+			}
 			return this._len;
 		}
 	},
@@ -101,30 +101,21 @@ EmitFromRangeF.prototype = Object.create(Object.prototype, {
 		enumerable: false,
 		get: function() {
 			var res = this.go;
-			if (undefined !== res) {
-				return res.toString();
-			}
-			return res;
+			return (undefined !== res) ? res.toString() : res;
 		}
 	},
 	goBool: {
 		enumerable: false,
 		get: function() {
 			var res = this.go;
-			if (undefined !== res) {
-				return res > 0
-			}
-			return res;
+			return (undefined !== res) ? res > 0: res;
 		}
 	},
 	goArr: {
 		enumerable: false,
 		get: function() {
 			var res = this.go;
-			if (undefined !== res) {
-				return [res];
-			}
-			return res;
+			return (undefined !== res) ? [res] : res;
 		}
 	}
 

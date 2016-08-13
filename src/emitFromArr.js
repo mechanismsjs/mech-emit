@@ -5,15 +5,15 @@ function emitFromArr(source, repeat) {
 		source._parDir = f;
 	}
 
-	f._r = ((null == repeat) || (undefined == repeat)) ? false : true;
+	f._r = ((null === repeat) || (undefined === repeat)) ? false : true;
 	return f;
-};
+}
 
-function EmitFromArrF() {};
+function EmitFromArrF() {}
 EmitFromArrF.prototype = Object.create(Object.prototype, {
 	isMech: {
 		get: function() {
-			return true
+			return true;
 		}
 	},
 	s: {
