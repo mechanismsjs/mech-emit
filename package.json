@@ -1,39 +1,40 @@
 {
-	"name": "mech-emit",
-	"namesub": "emit",
-	"version": "0.2.1",
-	"description": "Library of emitter mechanisms",
-	"main": "./dist/mech-emit.js",
-	"scripts": {
-		"test": "gulp"
-	},
-	"source": [
-		"src/util/header.js",
-		"src/emitFromArr.js",
-		"src/emitFromRange.js",
-		"src/util/footer.js"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mechanismsjs/mech-emit.git"
-	},
-	"keywords": [
-		"mechanisms",
-		"client",
-		"server",
-		"emitter",
-		"emit"
-	],
-	"author": "Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/mechanismsjs/mech-emit/issues"
-	},
-	"homepage": "https://github.com/mechanismsjs/mech-emit",
-	"devDependencies": {
+  "name": "mech-emit",
+  "namesub": "emit",
+  "version": "0.2.2",
+  "description": "Library of emitter mechanisms",
+  "main": "./dist/mech-emit.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "source": [
+    "src/util/header.js",
+    "src/emitFromArr.js",
+    "src/emitFromRange.js",
+    "src/util/footer.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mechanismsjs/mech-emit.git"
+  },
+  "keywords": [
+    "mechanisms",
+    "client",
+    "server",
+    "emitter",
+    "emit"
+  ],
+  "author": "Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mechanismsjs/mech-emit/issues"
+  },
+  "homepage": "https://github.com/mechanismsjs/mech-emit",
+  "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.8.8",
     "gulp-concat": "^2.4.1",
+    "gulp-connect": "^2.2.0",
     "gulp-header": "^1.1.1",
     "gulp-mocha": "^3.0.1",
     "gulp-mocha-phantomjs": "^0.11.0",
@@ -44,5 +45,5 @@
     "merge": "^1.2.0",
     "mocha": "^3.0.2",
     "mech-core": "*"
-	}
+  }
 }
