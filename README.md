@@ -20,7 +20,7 @@ See [Mechanism Home][mech-home-link] for more information and other libraries.
 # Supported Mechanisms
 
 * *[emitFromArr](#emitFromArr-mechanism)* - Given an array, ```emitFromArr``` emits a single element at a time from the array.
-* *[emitFromRange](#emitFromRange-mechanism)* - Given a valid range, ```emitFromRange``` emits a single element from that range.
+* *[emitFromRange](#emitFromRange-mechanism)* - Given a range, ```emitFromRange``` emits a single element from that range.
 
 // TODO: Add emitters like
 
@@ -31,7 +31,7 @@ See [Mechanism Home][mech-home-link] for more information and other libraries.
 
 ## <a name="emitFromArr-mechanism"></a> emitFromArr
 
-Given an array, ```emitFromArr``` will continue to emit each element in the array. If no more elements are left, ```emitFromArr``` will emit ```undefined```. If repeat is true, ```emitFromArr``` will start emitting the array from the beginning never emitting ```undefined```.
+Given an array, ```emitFromArr``` will continue to emit each element in the array. If no more elements are left, ```emitFromArr``` will emit ```undefined```. If repeat is true, ```emitFromArr``` will start emitting the array from the beginning: never emitting ```undefined```.
 
 ```javascript
 var em = m.emitFromArr([3,4,8]);
@@ -51,7 +51,7 @@ em.go // 4th time returns 2
 // ... forever
 ```
 
-When set to true, the ```emitter``` will emit forever. Be careful when using with mechanisms like *[loop](https://github.com/mechanismsjs/mech-math#loop)* and *[map](https://github.com/mechanismsjs/mech-math#map-mech)*.
+When set to true, the ```emitter``` will emit forever. Be careful when using with emitters mechanisms like *[loop](https://github.com/mechanismsjs/mech-math#loop)* and *[map](https://github.com/mechanismsjs/mech-math#map-mech)*.
 
 ## <a name="emitFromRange-mechanism"></a> emitFromRange
 
@@ -132,9 +132,9 @@ But really, who needs a map when you can turn any algorithm into a "mapping" alg
 
 TODO: We may change the interface of emit's optional repeat parameter. We may make it:
 
-'repeat' - will cause the emitter to repeat when it reaches the end of the items to emit
-'reverse' - will cause the emitter to reverse what it emits starting at the end of the array
-'repeat-reverse' - will cause the emitter to flip flop between emitting forward and then reverse.
+* ```repeat``` - will cause the emitter to repeat when it reaches the end of the items to emit.
+* ```reverse``` - will cause the emitter to reverse what it emits starting at the end of the array.
+* ```repeat-reverse``` - will cause the emitter to flip flop between emitting forward and then reverse.
 
 # Setup
 
