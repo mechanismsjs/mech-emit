@@ -1,7 +1,7 @@
 {
   "name": "mech-emit",
   "namesub": "emit",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Library of emitter mechanisms",
   "main": "./dist/mech-emit.js",
   "scripts": {
